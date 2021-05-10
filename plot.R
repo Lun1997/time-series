@@ -1,18 +1,18 @@
 
-Taipei_Main=read_excel("¤À®É²Î­p.xlsx",sheet=1)
-Taipei_City_Hall=read_excel("¤À®É²Î­p.xlsx",sheet=2)
-Nanjing_Fuxing=read_excel("¤À®É²Î­p.xlsx",sheet=3)
-Tamsui=read_excel("¤À®É²Î­p.xlsx",sheet=4)
-Banqiao=read_excel("¤À®É²Î­p.xlsx",sheet=5)
+Taipei_Main=read_excel("åˆ†æ™‚çµ±è¨ˆ.xlsx",sheet=1)
+Taipei_City_Hall=read_excel("åˆ†æ™‚çµ±è¨ˆ.xlsx",sheet=2)
+Nanjing_Fuxing=read_excel("åˆ†æ™‚çµ±è¨ˆ.xlsx",sheet=3)
+Tamsui=read_excel("åˆ†æ™‚çµ±è¨ˆ.xlsx",sheet=4)
+Banqiao=read_excel("åˆ†æ™‚çµ±è¨ˆ.xlsx",sheet=5)
 
-#¥x¥_¨®¯¸
+#å°åŒ—è»Šç«™
 input=as.vector(t(as.matrix(Taipei_Main[1:30,2:22])))
 t=c(1:630)
 m=cbind(input,t);m=as.data.frame(m)
 l=as.character(c(1:30))
 a=ggplot(data=m,aes(x=t,y=input))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¶i¯¸",title="¥x¥_¨®¯¸")+
+  labs(x="day",y="é€²ç«™",title="å°åŒ—è»Šç«™")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
  
 
@@ -21,7 +21,7 @@ t=c(1:630)
 m=cbind(output,t);m=as.data.frame(m)
 b=ggplot(data=m,aes(x=t,y=output))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¥X¯¸",title="¥x¥_¨®¯¸")+
+  labs(x="day",y="å‡ºç«™",title="å°åŒ—è»Šç«™")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 
@@ -31,24 +31,24 @@ t=c(1:630)
 m=cbind(total,t);m=as.data.frame(m)
 c=ggplot(data=m,aes(x=t,y=total))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="Á`¹B¶q",title="¥x¥_¨®¯¸")+
+  labs(x="day",y="ç¸½é‹é‡",title="å°åŒ—è»Šç«™")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 M=cbind(t,input,output);M=as.data.frame(M)
-ggplot(data=M,aes(x=t))+geom_line(aes(y=input,col="¶i¯¸"))+
-  geom_line(aes(y=output,col="¥X¯¸"))+geom_line(aes(y=total,col="Á`¹B¶q"))+
+ggplot(data=M,aes(x=t))+geom_line(aes(y=input,col="é€²ç«™"))+
+  geom_line(aes(y=output,col="å‡ºç«™"))+geom_line(aes(y=total,col="ç¸½é‹é‡"))+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¹B¶q",title="¥x¥_¨®¯¸")+
+  labs(x="day",y="é‹é‡",title="å°åŒ—è»Šç«™")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
-#¥«¬F©²
+#å¸‚æ”¿åºœ
 input=as.vector(t(as.matrix(Taipei_City_Hall[1:30,2:22])))
 t=c(1:630)
 m=cbind(input,t);m=as.data.frame(m)
 l=as.character(c(1:30))
 a=ggplot(data=m,aes(x=t,y=input))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¶i¯¸",title="¥«¬F©²")+
+  labs(x="day",y="é€²ç«™",title="å¸‚æ”¿åºœ")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 output=as.vector(t(as.matrix(Taipei_City_Hall[32:61,2:22])))
@@ -56,7 +56,7 @@ t=c(1:630)
 m=cbind(output,t);m=as.data.frame(m)
 b=ggplot(data=m,aes(x=t,y=output))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¥X¯¸",title="¥«¬F©²")+
+  labs(x="day",y="å‡ºç«™",title="å¸‚æ”¿åºœ")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 total=as.vector(t(as.matrix(Taipei_City_Hall[63:92,2:22])))
@@ -64,24 +64,24 @@ t=c(1:630)
 m=cbind(total,t);m=as.data.frame(m)
 c=ggplot(data=m,aes(x=t,y=total))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="Á`¹B¶q",title="¥«¬F©²")+
+  labs(x="day",y="ç¸½é‹é‡",title="å¸‚æ”¿åºœ")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 M=cbind(t,input,output);M=as.data.frame(M)
-ggplot(data=M,aes(x=t))+geom_line(aes(y=input,col="¶i¯¸"))+
-  geom_line(aes(y=output,col="¥X¯¸"))+geom_line(aes(y=total,col="Á`¹B¶q"))+
+ggplot(data=M,aes(x=t))+geom_line(aes(y=input,col="é€²ç«™"))+
+  geom_line(aes(y=output,col="å‡ºç«™"))+geom_line(aes(y=total,col="ç¸½é‹é‡"))+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¹B¶q",title="¥«¬F©²")+
+  labs(x="day",y="é‹é‡",title="å¸‚æ”¿åºœ")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
-#«n¨Ê´_¿³
+#å—äº¬å¾©èˆˆ
 input=as.vector(t(as.matrix(Nanjing_Fuxing[1:30,2:22])))
 t=c(1:630)
 m=cbind(input,t);m=as.data.frame(m)
 l=as.character(c(1:30))
 a=ggplot(data=m,aes(x=t,y=input))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¶i¯¸",title="«n¨Ê´_¿³")+
+  labs(x="day",y="é€²ç«™",title="å—äº¬å¾©èˆˆ")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 output=as.vector(t(as.matrix(Nanjing_Fuxing[32:61,2:22])))
@@ -89,7 +89,7 @@ t=c(1:630)
 m=cbind(output,t);m=as.data.frame(m)
 b=ggplot(data=m,aes(x=t,y=output))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¥X¯¸",title="«n¨Ê´_¿³")+
+  labs(x="day",y="å‡ºç«™",title="å—äº¬å¾©èˆˆ")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 total=as.vector(t(as.matrix(Nanjing_Fuxing[63:92,2:22])))
@@ -97,23 +97,23 @@ t=c(1:630)
 m=cbind(total,t);m=as.data.frame(m)
 c=ggplot(data=m,aes(x=t,y=total))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="Á`¹B¶q",title="«n¨Ê´_¿³")+
+  labs(x="day",y="ç¸½é‹é‡",title="å—äº¬å¾©èˆˆ")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 M=cbind(t,input,output);M=as.data.frame(M)
-ggplot(data=M,aes(x=t))+geom_line(aes(y=input,col="¶i¯¸"))+
-  geom_line(aes(y=output,col="¥X¯¸"))+geom_line(aes(y=total,col="Á`¹B¶q"))+
+ggplot(data=M,aes(x=t))+geom_line(aes(y=input,col="é€²ç«™"))+
+  geom_line(aes(y=output,col="å‡ºç«™"))+geom_line(aes(y=total,col="ç¸½é‹é‡"))+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¹B¶q",title="«n¨Ê´_¿³")+
+  labs(x="day",y="é‹é‡",title="å—äº¬å¾©èˆˆ")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
-#²H¤ô
+#æ·¡æ°´
 input=as.vector(t(as.matrix(Tamsui[1:30,2:22])))
 t=c(1:630)
 m=cbind(input,t);m=as.data.frame(m)
 l=as.character(c(1:30))
 a=ggplot(data=m,aes(x=t,y=input))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¶i¯¸",title="²H¤ô")+
+  labs(x="day",y="é€²ç«™",title="æ·¡æ°´")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 output=as.vector(t(as.matrix(Tamsui[32:61,2:22])))
@@ -121,7 +121,7 @@ t=c(1:630)
 m=cbind(output,t);m=as.data.frame(m)
 b=ggplot(data=m,aes(x=t,y=output))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¥X¯¸",title="²H¤ô")+
+  labs(x="day",y="å‡ºç«™",title="æ·¡æ°´")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 total=as.vector(t(as.matrix(Tamsui[63:92,2:22])))
@@ -129,23 +129,23 @@ t=c(1:630)
 m=cbind(total,t);m=as.data.frame(m)
 c=ggplot(data=m,aes(x=t,y=total))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="Á`¹B¶q",title="²H¤ô")+
+  labs(x="day",y="ç¸½é‹é‡",title="æ·¡æ°´")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 M=cbind(t,input,output);M=as.data.frame(M)
-ggplot(data=M,aes(x=t))+geom_line(aes(y=input,col="¶i¯¸"))+
-  geom_line(aes(y=output,col="¥X¯¸"))+geom_line(aes(y=total,col="Á`¹B¶q"))+
+ggplot(data=M,aes(x=t))+geom_line(aes(y=input,col="é€²ç«™"))+
+  geom_line(aes(y=output,col="å‡ºç«™"))+geom_line(aes(y=total,col="ç¸½é‹é‡"))+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¹B¶q",title="²H¤ô")+
+  labs(x="day",y="é‹é‡",title="æ·¡æ°´")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
-#ªO¾ô
+#æ¿æ©‹
 input=as.vector(t(as.matrix(Banqiao[1:30,2:22])))
 t=c(1:630)
 m=cbind(input,t);m=as.data.frame(m)
 l=as.character(c(1:30))
 a=ggplot(data=m,aes(x=t,y=input))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¶i¯¸",title="ªO¾ô")+
+  labs(x="day",y="é€²ç«™",title="æ¿æ©‹")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 output=as.vector(t(as.matrix(Banqiao[32:61,2:22])))
@@ -153,7 +153,7 @@ t=c(1:630)
 m=cbind(output,t);m=as.data.frame(m)
 b=ggplot(data=m,aes(x=t,y=output))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¥X¯¸",title="ªO¾ô")+
+  labs(x="day",y="å‡ºç«™",title="æ¿æ©‹")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 total=as.vector(t(as.matrix(Banqiao[63:92,2:22])))
@@ -161,14 +161,14 @@ t=c(1:630)
 m=cbind(total,t);m=as.data.frame(m)
 c=ggplot(data=m,aes(x=t,y=total))+geom_line()+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="Á`¹B¶q",title="ªO¾ô")+
+  labs(x="day",y="ç¸½é‹é‡",title="æ¿æ©‹")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 M=cbind(t,input,output);M=as.data.frame(M)
-ggplot(data=M,aes(x=t))+geom_line(aes(y=input,col="¶i¯¸"))+
-  geom_line(aes(y=output,col="¥X¯¸"))+geom_line(aes(y=total,col="Á`¹B¶q"))+
+ggplot(data=M,aes(x=t))+geom_line(aes(y=input,col="é€²ç«™"))+
+  geom_line(aes(y=output,col="å‡ºç«™"))+geom_line(aes(y=total,col="ç¸½é‹é‡"))+
   scale_x_continuous(breaks=seq(1,630,21),labels =l)+
-  labs(x="day",y="¹B¶q",title="ªO¾ô")+
+  labs(x="day",y="é‹é‡",title="æ¿æ©‹")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 
