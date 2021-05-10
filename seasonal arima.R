@@ -15,20 +15,20 @@ Box.test(a$residuals)
 v=c(1:441)
 l=c(6:26)
 m=cbind(v,train,a$fitted);m=data.frame(m)
-ggplot(data=m,aes(x=v))+geom_line(aes(y=train,col="¹ê»Ú­È"))+
-  geom_line(aes(y=a.fitted,col="ÀÀ¦X­È"))+
+ggplot(data=m,aes(x=v))+geom_line(aes(y=train,col="å¯¦éš›å€¼"))+
+  geom_line(aes(y=a.fitted,col="æ“¬åˆå€¼"))+
   scale_x_continuous(breaks=seq(1,441,21),labels=l)+
-  labs(x="day",y="Á`¹B¶q",title="¥«¬F©² ARIMA")+
+  labs(x="day",y="ç¸½é‹é‡",title="å¸‚æ”¿åºœ ARIMA")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 
 
 p=Arima(total,order=c(0,0,3),seasonal=c(0,1,0))$fitted[547:630]
 t=c(1:84);l=c(27:30)
 c=data.frame(cbind(t,test,p))
-ggplot(data=c,aes(x=t))+geom_line(aes(y=test,col="¹ê»Ú­È"))+
-  geom_line(aes(y=p,col="¹w´ú­È"))+
+ggplot(data=c,aes(x=t))+geom_line(aes(y=test,col="å¯¦éš›å€¼"))+
+  geom_line(aes(y=p,col="é æ¸¬å€¼"))+
   scale_x_continuous(breaks=seq(1,84,21),labels=l)+
-  labs(x="day",y="Á`¹B¶q",title="4/27~4/30¦ô­p")+
+  labs(x="day",y="ç¸½é‹é‡",title="4/27~4/30ä¼°è¨ˆ")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
 mean(abs(test-p))/mean(test)
 
@@ -39,9 +39,9 @@ Tamsui=p[64:84]
 Banqiao=p[64:84]
 l=c(c(0,1),c(5:23))
 M=data.frame(cbind(l,taipei,city,Nanjing,Tamsui,Banqiao))
-ggplot(data=M,aes(x=t))+geom_line(aes(y=taipei,col="¥x¥_¨®¯¸"))+
-  geom_line(aes(y=city,col="¥«¬F©²"))+geom_line(aes(y=Nanjing,col="«n¨Ê´_¿³"))+
-  geom_line(aes(y=Tamsui,col="²H¤ô"))+geom_line(aes(y=Banqiao,col="ªO¾ô"))+
+ggplot(data=M,aes(x=t))+geom_line(aes(y=taipei,col="å°åŒ—è»Šç«™"))+
+  geom_line(aes(y=city,col="å¸‚æ”¿åºœ"))+geom_line(aes(y=Nanjing,col="å—äº¬å¾©èˆˆ"))+
+  geom_line(aes(y=Tamsui,col="æ·¡æ°´"))+geom_line(aes(y=Banqiao,col="æ¿æ©‹"))+
   scale_x_continuous(breaks=c(1:21),labels=l)+
-  labs(x="hr",y="Á`¹B¶q",title="¤@¤é¤H¬y¦ô­p")+
+  labs(x="hr",y="ç¸½é‹é‡",title="ä¸€æ—¥äººæµä¼°è¨ˆ")+
   theme(plot.title=element_text(hjust = 0.5,face="bold"))
