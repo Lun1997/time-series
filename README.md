@@ -34,7 +34,7 @@
 **資料平穩且具週期性，適用seasonal ARIMA**
 
 * step2 資料擬合<br>
-$x^2$<br>
+![1](http://latex.codecogs.com/svg.latex?\int_a^bf(x)\ dx)
 **台北車站 :   ** <br>
 ![](北車擬合.png)
 **市政府 : SARIMA(0,0,3)(0,1,0)21**<br>
